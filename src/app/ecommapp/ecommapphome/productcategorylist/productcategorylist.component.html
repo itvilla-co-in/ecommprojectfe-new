@@ -1,0 +1,13 @@
+<div class="menu-sidebar-content">
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+          <li *ngFor="let temppc of productCategories">
+
+            <a routerLink="/ecomm/category/{{ temppc.id }}" routerLinkActive="active-link">
+                {{ temppc.id }}  {{ temppc.categoryName }}
+            </a>
+
+        </li>
+        </ul>
+    </nav>
+</div>

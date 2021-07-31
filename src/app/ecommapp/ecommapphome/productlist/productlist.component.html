@@ -1,0 +1,29 @@
+  <!-- if products empty then display a message-->
+  <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
+    No products found.
+ </div>
+ <div *ngIf="products?.length != 0">
+    <!-- loop over the collection of products -->
+    <div *ngFor="let tempProduct of products | paginate: { itemsPerPage: thePageSize, currentPage: thePageNumber
+   ,totalItems: theTotalElements }" class="col-md-3 product-container">
+           <div class="product">
+            <a routerLink="/ecomm/products/{{ tempProduct.id }}">
+              <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+            </a>
+            <a routerLink="/ecomm/products/{{ tempProduct.id }}">
+           <p>{{ tempProduct.name }}</p>  
+          </a>
+           <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
+           <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
+         </div>
+     </div>
+      <!--Including the pagination control.-->
+       <div class="d-flex justify-content-center">
+         <pagination-controls 
+         
+           previousLabel="Prev" 
+           nextLabel="Next" 
+           (pageChange)="onPagechange($event)">
+         </pagination-controls>
+       </div>
+     </div>

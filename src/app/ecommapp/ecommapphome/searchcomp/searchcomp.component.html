@@ -1,0 +1,30 @@
+<div class="form-header">
+ 
+    <input #myinput type="text" 
+           placeholder="Search for products"
+           (keyup)="Search(myinput.value)"  />
+
+    <button (click)="Search(myinput.value)">
+        Search
+    </button>
+ 
+
+    <!--
+    <div class="input-group">
+        <input  #myinput type="text" class="form-control" placeholder="Search for products"
+        (keyup.enter)="Search(myinput.value)">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="Search(myinput.value)">Search</button>
+        </div>
+      </div>
+
+      -->
+      <!--
+      <form class="form-inline">
+       
+        <input  #myinput type="text" class="form-control mr-sm-2" placeholder="Search for products"
+        (keyup.enter)="Search(myinput.value)">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    -->
+</div>

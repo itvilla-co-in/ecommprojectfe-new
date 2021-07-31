@@ -1,0 +1,31 @@
+.cart-header {
+    display: flex;
+   justify-self: center;
+    
+   padding-left: 10px;
+   a{
+    display:inline-block;
+    text-decoration:none;
+    color: black;
+    padding-top: 7px;
+    padding-left: 5px;
+}
+
+.cart-header-detail {
+    display: flex;
+    padding-left: 5px;
+}
+.specialtext{
+    font-weight: 800;
+    color: white;
+    font-style: oblique;
+}
+
+
+.fontawesome{
+    font-size: 20px;
+}
+
+
+}
+

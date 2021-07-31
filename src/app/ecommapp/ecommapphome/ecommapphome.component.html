@@ -1,0 +1,64 @@
+<div class="content-wrapper"><!--aside sidebar and content with header on right-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+      <div class="logo">
+        <a routerLink="/products">
+          <img src="assets/ecomm/images/logo.jpg" alt="itvillaecomm" class="img-responsive">
+        </a>
+
+        <app-productcategorylist></app-productcategorylist>
+    
+
+      </div> 
+    </aside>
+
+    <div class="content-container">
+      <!-- HEADER DESKTOP-->
+      <header class="header">
+            <div class="header-search">
+            <app-searchcomp></app-searchcomp>
+            </div>
+            <div class="header-sub">
+              
+             <a *ngIf="isAuthenticated"  routerLink="/ecomm/orderhistory" routerLinkActive="active-link">
+                OrderHistroy
+              </a>
+              
+              <div *ngIf="isAuthenticated && username" class="welcome">  
+                Welcome back {{ username }}!
+              </div>
+        
+            <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">Login</button>
+        
+            <button *ngIf="isAuthenticated" (click)="logout()"  class="security-btn">Logout</button>
+
+              <!--<app-login></app-login>-->
+              <app-cart></app-cart>
+           </div>
+      </header>
+      <!-- END HEADER DESKTOP-->
+  
+      <!-- MAIN CONTENT-->
+      <router-outlet></router-outlet>
+
+      
+     
+
+
+    </div>
+    
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </footer>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+
+ 

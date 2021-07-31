@@ -1,0 +1,9 @@
+<div class="cart-header">
+    <a class="cart-header-detail" routerLink="/ecomm/itvillacart">
+        <div class="total">
+           <span class="specialtext">Cart Value:</span> {{ totalPrice | currency: 'USD' }}
+            | <span class="specialtext">Quantity: </span> <span>{{ totalQuantity }}</span> 
+        </div> 
+        <i class="fa fa-shopping-cart fontawesome" aria-hidden="true"></i>
+    </a>
+</div>
